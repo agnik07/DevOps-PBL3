@@ -4,7 +4,7 @@ metadata:
   name: student-backend
 
 spec:
-  replicas: 2
+  replicas: 1
 
   selector:
     matchLabels:
@@ -28,22 +28,22 @@ spec:
             - name: PORT
               value: "5000"
 
-            - name: MONGO_URI
-              value: mongodb://mongo-service:27017/student_management
-
             - name: JWT_SECRET
-              value: supersecret
+              value: "supersecret"
 
-          livenessProbe:
-            httpGet:
-              path: /health
-              port: 5000
-            initialDelaySeconds: 10
-            periodSeconds: 10
+            - name: MONGO_URI
+              value: "mongodb://mongo-service:27017/student_management"
 
           readinessProbe:
             httpGet:
               path: /health
               port: 5000
-            initialDelaySeconds: 5
-            periodSeconds: 5
+            initialDelaySeconds: 30
+            periodSeconds: 10
+
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 5000
+            initialDelaySeconds: 60
+            periodSeconds: 15
