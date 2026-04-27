@@ -45,5 +45,5 @@ jobs:
             cd ~/DevOps-PBL3
             git pull origin main
             sudo kubectl apply -f k8s/
-            sudo kubectl rollout restart deployment frontend
-            sudo kubectl rollout restart deployment backend
+            sudo kubectl rollout restart deployment student-frontend
+            sudo kubectl rollout restart deployment student-backend
