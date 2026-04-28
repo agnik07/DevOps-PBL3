@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const base = import.meta.env.VITE_API_URL || "http://localhost:5000";
+const base = import.meta.env.VITE_API_URL || "http://54.89.92.120:30001";
 if (import.meta.env.DEV) {
   // High-signal runtime hint when env points at wrong backend.
   // eslint-disable-next-line no-console

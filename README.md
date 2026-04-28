@@ -45,7 +45,7 @@ JWT_SECRET=change_this_to_a_long_random_secret
 
 ### `frontend/.env`
 ```env
-VITE_API_URL=http://localhost:5000
+VITE_API_URL=http://54.89.92.120:30001
 ```
 
 ## Seed Demo Users
